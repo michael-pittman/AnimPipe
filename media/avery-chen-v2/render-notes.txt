@@ -1,0 +1,7 @@
+Lighting: Cycles CPU, AgX, exposure 0, gamma 1, neutral gray world (0.42, 0.42, 0.42), no depth of field.
+Head cameras: 85 mm, vertical 24 mm sensor. Full body cameras: 60 mm. Measurement plates: orthographic, 2048 px.
+Facial interior pixels at code 0 or 255 on front-closeup: 0.0000%.
+Action sheet is one representative frame per action, not every frame.
+Silhouettes are background-difference mattes from the beauty render, not a separate lighting pass.
+Five-person audience study: NOT RUN.
+Clean-host pipe asset doctor and link smoke: NOT RUN.

@@ -1,0 +1,462 @@
+{
+  "actions": [
+    {
+      "category": "idle",
+      "duration_frames": 48,
+      "loop": true,
+      "name": "idle_neutral_loop"
+    },
+    {
+      "category": "locomotion",
+      "duration_frames": 24,
+      "loop": true,
+      "name": "walk_cycle"
+    },
+    {
+      "category": "turn",
+      "duration_frames": 18,
+      "loop": false,
+      "name": "turn_left_90"
+    },
+    {
+      "category": "turn",
+      "duration_frames": 18,
+      "loop": false,
+      "name": "turn_right_90"
+    },
+    {
+      "category": "gesture",
+      "duration_frames": 28,
+      "loop": false,
+      "name": "gesture_present"
+    },
+    {
+      "category": "gesture",
+      "duration_frames": 24,
+      "loop": false,
+      "name": "point_left"
+    },
+    {
+      "category": "gesture",
+      "duration_frames": 24,
+      "loop": false,
+      "name": "point_right"
+    },
+    {
+      "category": "gesture",
+      "duration_frames": 30,
+      "loop": false,
+      "name": "wave"
+    },
+    {
+      "category": "gesture",
+      "duration_frames": 20,
+      "loop": false,
+      "name": "head_nod"
+    },
+    {
+      "category": "gesture",
+      "duration_frames": 24,
+      "loop": false,
+      "name": "head_shake"
+    },
+    {
+      "category": "gesture",
+      "duration_frames": 28,
+      "loop": false,
+      "name": "reach_grab"
+    },
+    {
+      "category": "gesture",
+      "duration_frames": 30,
+      "loop": false,
+      "name": "place_release"
+    },
+    {
+      "category": "pose",
+      "duration_frames": 1,
+      "loop": false,
+      "name": "pose_neutral"
+    },
+    {
+      "category": "pose",
+      "duration_frames": 1,
+      "loop": false,
+      "name": "pose_present"
+    },
+    {
+      "category": "pose",
+      "duration_frames": 1,
+      "loop": false,
+      "name": "pose_listen"
+    },
+    {
+      "category": "pose",
+      "duration_frames": 1,
+      "loop": false,
+      "name": "pose_think"
+    },
+    {
+      "category": "pose",
+      "duration_frames": 1,
+      "loop": false,
+      "name": "pose_point"
+    },
+    {
+      "category": "pose",
+      "duration_frames": 1,
+      "loop": false,
+      "name": "pose_hold"
+    },
+    {
+      "category": "pose",
+      "duration_frames": 1,
+      "loop": false,
+      "name": "pose_ready"
+    },
+    {
+      "category": "pose",
+      "duration_frames": 1,
+      "loop": false,
+      "name": "pose_end"
+    }
+  ],
+  "armature": "RIG_AVERY_CHEN",
+  "asset_id": "char.avery_chen",
+  "blender": "5.2.1",
+  "builder": "scripts/build_avery_chen.py",
+  "bytes": 2280443,
+  "collection": "COL_AVERY_CHEN",
+  "coordinates": {
+    "forward": "-Y",
+    "scale": 1.0,
+    "units": "meters",
+    "up": "Z"
+  },
+  "external_images": [],
+  "facial_controls": [
+    "BLINK",
+    "BROW_UP",
+    "BROW_DOWN",
+    "EXP_smile",
+    "EXP_frown",
+    "EXP_surprise",
+    "LOOK_LEFT",
+    "LOOK_RIGHT"
+  ],
+  "facial_measures": {
+    "lip_center_z": 1.5339735746383667,
+    "lip_width": 0.06211841478943825
+  },
+  "file": "characters/AveryChen.blend",
+  "interaction_points": {
+    "hand_left": "hand.L",
+    "hand_right": "hand.R"
+  },
+  "known_limitations": [
+    "The exact 18-bone contract has no clavicles, jaw, fingers, or hair-secondary bones.",
+    "Rolled sleeves are upper-arm weighted and overlap the chest-weighted armscye.",
+    "The volumetric groom is head-locked; no runtime secondary simulation is required.",
+    "Dental and tongue follow clamped driven shape keys rather than a jaw bone.",
+    "Blender blend bytes are not claimed byte-identical; scene inventory and rendered output are deterministic under 5.2.1."
+  ],
+  "license": "CC0-1.0",
+  "linked_libraries": [],
+  "materials": {
+    "character": "MAT_PROXY_CHARACTER",
+    "focus": "MAT_PROXY_FOCUS"
+  },
+  "objects": 58,
+  "output_path": "/cursor/stores/bc-b80cc329-0c07-499f-9a51-00c871f014b4/assets/characters/AveryChen.blend",
+  "packed_dependencies": true,
+  "renders": [
+    {
+      "bytes": 1099965,
+      "file": "action-sheet.png",
+      "sha256": "bca9cb3f4e7aa42c3edf602027fda95d76cb5950ec4051dd8ccc911f30119c30"
+    },
+    {
+      "bytes": 1356848,
+      "file": "closeup-profile.png",
+      "sha256": "1ea46abebdc4a3a7f521194689caf3dc153d7f7fe22c87b5181c2c0448795acf"
+    },
+    {
+      "bytes": 1370644,
+      "file": "closeup-three-quarter.png",
+      "sha256": "f99e04cb0ba3405b3660dd3a975e40a86a282337604245dbd7f00f502ebdb17b"
+    },
+    {
+      "bytes": 1131620,
+      "file": "deformation-sheet.png",
+      "sha256": "e0f84b65f1a2d8a8f86e4cce97b5eb276fe35ab07549601b9aad91abc6ca3558"
+    },
+    {
+      "bytes": 1358578,
+      "file": "dental-sheet.png",
+      "sha256": "3173c5e9a553bd270bf258338a38c8fa9ebbc3508c5691920d0390c35619d92b"
+    },
+    {
+      "bytes": 1469531,
+      "file": "expression-sheet.png",
+      "sha256": "f703b78b24a5644f54c8b912980f425bad1fb34a0499f5b70f0756f3a3e6c3bb"
+    },
+    {
+      "bytes": 4010974,
+      "file": "expression-viseme-combos.png",
+      "sha256": "8c20707eebda04569370586f418e4817f3ad7df5d954e5e454be954fdfed38fd"
+    },
+    {
+      "bytes": 1426350,
+      "file": "eye-brow-alignment.png",
+      "sha256": "7f21a24eafd2d9c505bbf6f0b0b476220b2af514687c063cdfd6d03dab1980bc"
+    },
+    {
+      "bytes": 2540530,
+      "file": "eye-brow-matrix.png",
+      "sha256": "322af0ec11bd1dca16fe9b068eb3165766d9ac6b2fef4be927182772c2d630c9"
+    },
+    {
+      "bytes": 2975044,
+      "file": "facial-angle-matrix.png",
+      "sha256": "efd28edd9a7d517aa7bf15892d0288fe8b3aa8aed7f4fe7f774fe4f45fb61f4b"
+    },
+    {
+      "bytes": 1410726,
+      "file": "front-closeup.png",
+      "sha256": "6138d66640e1554ee9a75fc422e332b0ac7667940d3abcde335534ffbeb2367a"
+    },
+    {
+      "bytes": 1169659,
+      "file": "full-body-back.png",
+      "sha256": "f2c4fa8f863f648929f935a7556666cd96b6e0c327df82b395b0bc28c8e4fd01"
+    },
+    {
+      "bytes": 1189381,
+      "file": "full-body-front.png",
+      "sha256": "9041723c3163b2c2b5f4fd2738189bffed0762b1974273a20df51dcd90e8a3d6"
+    },
+    {
+      "bytes": 1148714,
+      "file": "full-body-side.png",
+      "sha256": "2ad543b1aef476e8f90c395f1204ddf90e386c48bf60a92f4499639e5994a54e"
+    },
+    {
+      "bytes": 1191086,
+      "file": "full-body-three-quarter.png",
+      "sha256": "979af24fc6ac9a2de4899f1919d138c373cdead8c3a7e53a14a159047f745313"
+    },
+    {
+      "bytes": 974730,
+      "file": "neutral-calibration.png",
+      "sha256": "37a3e9974f26c6e61869e4b4adadea4c281d23318474ab0177593372db1db959"
+    },
+    {
+      "bytes": 1284219,
+      "file": "reference-comparison.png",
+      "sha256": "198893c7817410639b89b817d2a31ff31a6315bd50ed73a8ffd9d417d4ccb488"
+    },
+    {
+      "bytes": 494504,
+      "file": "shoulder-tests.png",
+      "sha256": "0f602a3c2db5c33c20408d3e9464974cf2c0933bc292f0b0590de54d8a59c5f7"
+    },
+    {
+      "bytes": 3222365,
+      "file": "transition-strips.png",
+      "sha256": "a62a1de2ee387237d22f8d3d0b18edb765046f63f7776bdf9561f345577c8925"
+    },
+    {
+      "bytes": 1045160,
+      "file": "turnaround.png",
+      "sha256": "58fcb6eee47c3daca567f7de18fdd7e8297445510ede70ac98330de05b3c1a95"
+    },
+    {
+      "bytes": 1357438,
+      "file": "turntable.png",
+      "sha256": "d55bb6a25fe6fe171a9b3381cf897bee19800cc1711d7d7bde8b62083737a879"
+    },
+    {
+      "bytes": 994800,
+      "file": "viseme-strip.png",
+      "sha256": "6f0148dfb1a68646d74025a7ed6c0a961ddb34cf8c13fed94894fdb79ab411f6"
+    },
+    {
+      "bytes": 801939,
+      "file": "wardrobe-proof.png",
+      "sha256": "9d7b0d6431f8d6a995470b6ee0ffecc22ffef067f54c5e1bc4633363f5d6833b"
+    },
+    {
+      "bytes": 594226,
+      "file": "wireframe-overlay.png",
+      "sha256": "e3a859757121530b3d26ffde43c2f17e625fd6b18bd16bc97d1349b6fe3b392d"
+    }
+  ],
+  "retarget_profile": "proxy_rig_v1",
+  "sha256": "751fd05872f4730ef39cec3160395b431693304a91a5283e6448199739f6f6bc",
+  "source": {
+    "file": "vendor/avery-chen/coherent-base.blend",
+    "license": "CC0-1.0",
+    "runtime_dependencies": [],
+    "sha256": "22fb0364e20c84cd3b886b9f9f665cec3abc898adb6afee9b1ee282dca161f2d"
+  },
+  "style_id": "avery_chen_v3",
+  "tested_action_frames": {
+    "gesture_present": [
+      1,
+      14,
+      28
+    ],
+    "head_nod": [
+      1,
+      10,
+      20
+    ],
+    "head_shake": [
+      1,
+      12,
+      24
+    ],
+    "idle_neutral_loop": [
+      1,
+      24,
+      48
+    ],
+    "place_release": [
+      1,
+      15,
+      30
+    ],
+    "point_left": [
+      1,
+      12,
+      24
+    ],
+    "point_right": [
+      1,
+      12,
+      24
+    ],
+    "pose_end": [
+      1
+    ],
+    "pose_hold": [
+      1
+    ],
+    "pose_listen": [
+      1
+    ],
+    "pose_neutral": [
+      1
+    ],
+    "pose_point": [
+      1
+    ],
+    "pose_present": [
+      1
+    ],
+    "pose_ready": [
+      1
+    ],
+    "pose_think": [
+      1
+    ],
+    "reach_grab": [
+      1,
+      14,
+      28
+    ],
+    "turn_left_90": [
+      1,
+      9,
+      18
+    ],
+    "turn_right_90": [
+      1,
+      9,
+      18
+    ],
+    "walk_cycle": [
+      1,
+      12,
+      24
+    ],
+    "wave": [
+      1,
+      15,
+      30
+    ]
+  },
+  "texture_memory_estimate_mb": 0.0,
+  "triangles": 66402,
+  "triangles_by_object": {
+    "GEO_AVERY_BADGE": 188,
+    "GEO_AVERY_BADGE_BAR_0": 188,
+    "GEO_AVERY_BADGE_BAR_1": 188,
+    "GEO_AVERY_BADGE_BAR_2": 188,
+    "GEO_AVERY_BADGE_CLIP": 188,
+    "GEO_AVERY_BADGE_PORTRAIT": 188,
+    "GEO_AVERY_BELT": 384,
+    "GEO_AVERY_BELT_KEEPER": 188,
+    "GEO_AVERY_BODY": 4108,
+    "GEO_AVERY_BROWS": 320,
+    "GEO_AVERY_BUCKLE": 188,
+    "GEO_AVERY_CORNEAS": 192,
+    "GEO_AVERY_CUPSOLE_L": 236,
+    "GEO_AVERY_CUPSOLE_R": 236,
+    "GEO_AVERY_EYES": 2040,
+    "GEO_AVERY_GLASSES": 3500,
+    "GEO_AVERY_HAIR": 5280,
+    "GEO_AVERY_HAIR_COILS": 720,
+    "GEO_AVERY_HEAD": 18120,
+    "GEO_AVERY_HEEL_TAB_L": 188,
+    "GEO_AVERY_HEEL_TAB_R": 188,
+    "GEO_AVERY_IRISES": 192,
+    "GEO_AVERY_LACES_L": 240,
+    "GEO_AVERY_LACES_R": 240,
+    "GEO_AVERY_LANYARD_BREAKAWAY": 188,
+    "GEO_AVERY_LANYARD_L": 24,
+    "GEO_AVERY_LANYARD_R": 24,
+    "GEO_AVERY_LAPEL_L": 16,
+    "GEO_AVERY_LAPEL_R": 16,
+    "GEO_AVERY_LENSES": 312,
+    "GEO_AVERY_OUTSOLE_L": 236,
+    "GEO_AVERY_OUTSOLE_R": 236,
+    "GEO_AVERY_PATCH_CHEST": 8,
+    "GEO_AVERY_PATCH_SLEEVE_L": 8,
+    "GEO_AVERY_PATCH_SLEEVE_R": 8,
+    "GEO_AVERY_PUPILS": 192,
+    "GEO_AVERY_RAGLAN_L": 192,
+    "GEO_AVERY_RAGLAN_R": 192,
+    "GEO_AVERY_ROLLED_CUFF_L": 40,
+    "GEO_AVERY_ROLLED_CUFF_R": 40,
+    "GEO_AVERY_SCALP_BRAIDS": 17920,
+    "GEO_AVERY_SHIRT": 256,
+    "GEO_AVERY_SHOES": 3320,
+    "GEO_AVERY_SHOE_PIPING_L": 48,
+    "GEO_AVERY_SHOE_PIPING_R": 48,
+    "GEO_AVERY_SLEEVE_L": 280,
+    "GEO_AVERY_SLEEVE_R": 280,
+    "GEO_AVERY_SOCK_L": 256,
+    "GEO_AVERY_SOCK_MAGENTA_L": 256,
+    "GEO_AVERY_SOCK_MAGENTA_R": 256,
+    "GEO_AVERY_SOCK_R": 256,
+    "GEO_AVERY_SOCK_TEAL_L": 256,
+    "GEO_AVERY_SOCK_TEAL_R": 256,
+    "GEO_AVERY_TEETH": 156,
+    "GEO_AVERY_TROUSERS": 2626,
+    "GEO_AVERY_TROUSER_CUFF_L": 256,
+    "GEO_AVERY_TROUSER_CUFF_R": 256
+  },
+  "version": "3.0.0",
+  "visemes": [
+    "VISEME_A",
+    "VISEME_B",
+    "VISEME_C",
+    "VISEME_D",
+    "VISEME_E",
+    "VISEME_F",
+    "VISEME_G",
+    "VISEME_H",
+    "VISEME_X"
+  ]
+}

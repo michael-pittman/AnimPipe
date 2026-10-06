@@ -1,0 +1,6 @@
+VERDICT: FAIL
+
+- `front-closeup.png`, `three-quarter-closeup.png`, `head-minus-30.png`, and `head-plus-30.png` show an unmistakably broken crew-neck material boundary: repeated skin-colored triangular spikes extend down into the knit around the entire neckline. The same sawtooth defect is visible in `wardrobe-proof.png` and the full-body plates.
+- `wardrobe-proof.png`, `full-body-front.png`, `full-body-back.png`, `full-body-three-quarter.png`, all three measurement plates, `shoulder-tests.png`, and `deformation-sheet.png` show hard stepped upper-arm contours and large jagged dark strips across both outer thighs. The painted-on knit and trousers expose body, crotch, and buttock contours like a bodysuit/leggings and do not read as intact contemporary business-casual garments.
+- `wardrobe-proof.png`, `full-body-front.png`, `full-body-side.png`, `full-body-three-quarter.png`, `measure-front.png`, `deformation-sheet.png`, and `action-sheet.png` show a blank card floating away from the torso with no visible U-shaped lanyard strap, contradicting the README and verification claims.
+- The edge-stretch inspection in `avery-v2-every-frame-inspection.md` evaluates basemesh topology only; it does not test the visibly defective material boundaries or missing lanyard, so its PASS does not resolve these rendered blockers.
