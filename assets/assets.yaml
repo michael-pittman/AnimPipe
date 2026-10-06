@@ -152,3 +152,156 @@ assets:
       - EXP_surprise
       - LOOK_LEFT
       - LOOK_RIGHT
+  char.patty_patties:
+    kind: character
+    version: 1.1.0
+    sha256: 39ba942d7fa5b75baec390a31b7cab15632e30b1d67be594e541e8b3e24324fb
+    blender_min: 5.2.1
+    file: characters/PattyPatties.blend
+    collection: COL_AVERY_CHEN
+    coordinates:
+      forward: -Y
+      scale: 1.0
+      units: meters
+      up: Z
+    interaction_points:
+      hand_left: hand.L
+      hand_right: hand.R
+    material_roles:
+    - character
+    - focus
+    complexity:
+      triangles: 358
+      texture_memory_estimate_mb: 8.14
+    source: media/reference/patty-patties-style-hires.png plus rig/actions from docs/avery-chen/AveryChen.blend
+    license: CC0-1.0
+    style_id: patty_patties_2d
+    tags:
+    - instructor
+    - rigged
+    - lip-sync
+    - illustrated-cutout
+    rig:
+      armature: RIG_AVERY_CHEN
+      retarget_profile: proxy_rig_v1
+      required_actions:
+      - idle_neutral_loop
+      - walk_cycle
+      - turn_left_90
+      - turn_right_90
+      - gesture_present
+      - point_left
+      - point_right
+      - wave
+      - head_nod
+      - head_shake
+      - reach_grab
+      - place_release
+      - pose_neutral
+      - pose_present
+      - pose_listen
+      - pose_think
+      - pose_point
+      - pose_hold
+      - pose_ready
+      - pose_end
+      action_metadata:
+        idle_neutral_loop:
+          duration_frames: 48
+          category: idle
+          loop: true
+        walk_cycle:
+          duration_frames: 24
+          category: locomotion
+          loop: true
+        turn_left_90:
+          duration_frames: 18
+          category: turn
+          loop: false
+        turn_right_90:
+          duration_frames: 18
+          category: turn
+          loop: false
+        gesture_present:
+          duration_frames: 28
+          category: gesture
+          loop: false
+        point_left:
+          duration_frames: 24
+          category: gesture
+          loop: false
+        point_right:
+          duration_frames: 24
+          category: gesture
+          loop: false
+        wave:
+          duration_frames: 30
+          category: gesture
+          loop: false
+        head_nod:
+          duration_frames: 20
+          category: gesture
+          loop: false
+        head_shake:
+          duration_frames: 24
+          category: gesture
+          loop: false
+        reach_grab:
+          duration_frames: 28
+          category: gesture
+          loop: false
+        place_release:
+          duration_frames: 30
+          category: gesture
+          loop: false
+        pose_neutral:
+          duration_frames: 1
+          category: pose
+          loop: false
+        pose_present:
+          duration_frames: 1
+          category: pose
+          loop: false
+        pose_listen:
+          duration_frames: 1
+          category: pose
+          loop: false
+        pose_think:
+          duration_frames: 1
+          category: pose
+          loop: false
+        pose_point:
+          duration_frames: 1
+          category: pose
+          loop: false
+        pose_hold:
+          duration_frames: 1
+          category: pose
+          loop: false
+        pose_ready:
+          duration_frames: 1
+          category: pose
+          loop: false
+        pose_end:
+          duration_frames: 1
+          category: pose
+          loop: false
+      visemes:
+        A: VISEME_A
+        B: VISEME_B
+        C: VISEME_C
+        D: VISEME_D
+        E: VISEME_E
+        F: VISEME_F
+        G: VISEME_G
+        H: VISEME_H
+        X: VISEME_X
+      facial_controls:
+      - BLINK
+      - BROW_UP
+      - BROW_DOWN
+      - EXP_smile
+      - EXP_frown
+      - EXP_surprise
+      - LOOK_LEFT
+      - LOOK_RIGHT

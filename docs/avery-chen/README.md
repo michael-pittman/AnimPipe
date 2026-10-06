@@ -50,8 +50,6 @@ Twenty canonical slotted actions (`idle_neutral_loop` … `pose_end`), nine vise
 | `vendor/avery-chen/SOURCE_MANIFEST.json` | checksum + upstream record | — |
 | `scripts/build_avery_chen.py` | deterministic V3 hero builder | CC0-1.0 |
 
-Historical archives under `archive/` are provenance only and are not build inputs.
-
 ## Look
 
 Warm deep-brown skin, soft-square integrated MakeHuman face, volumetric espresso updo with controlled magenta thread, rounded trapezoid glasses, navy open utility jacket with rolled forearm sleeves, warm-white shirt, high-waisted cuffed trousers, belt, ribbed socks, modeled sneakers, teal lanyard with neutral badge, and agency-neutral spark/chevron patches. Palette locks match `internal/v3-style-translation.md`.
