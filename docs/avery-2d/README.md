@@ -1,5 +1,7 @@
 # Avery Chen 2D (Patty style cutout)
 
+The tested pipeline drop-in is [`assets/characters/PattyPatties.blend`](../../assets/characters/PattyPatties.blend) (`char.patty_patties`). Rebuild it with `build_patty_dropin.py`. This folder's older `Avery2D.blend` is the earlier hero-card cutout.
+
 Immersive **per-part** 2D meshes in `COL_AVERY_CHEN` — each anatomy, clothing, accessory, and facial feature is its own object for prompt-level control.
 
 ## Drop-in

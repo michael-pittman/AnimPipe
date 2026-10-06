@@ -1,0 +1,23 @@
+{
+  "asset_id": "char.patty_patties",
+  "style_id": "patty_patties_2d",
+  "file": "characters/PattyPatties.blend",
+  "collection": "COL_AVERY_CHEN",
+  "armature": "RIG_AVERY_CHEN",
+  "retarget_profile": "proxy_rig_v1",
+  "sha256": "22e1d94b0da80babbc28929fc67939c750b5073d45b5a8ea7ba7d78f950d4c67",
+  "blender": "5.2.1 LTS",
+  "triangles": 352,
+  "objects": 39,
+  "actions": 20,
+  "texture_memory_mb": 6.47,
+  "motion": {
+    "wave_upper_arm_r_delta": 1.2459255078023013
+  },
+  "failures": [],
+  "link_test": {
+    "override": "COL_AVERY_CHEN",
+    "wave_pose_length": 1.2459255078023013,
+    "linked_objects": 39
+  }
+}
