@@ -154,8 +154,8 @@ assets:
       - LOOK_RIGHT
   char.patty_patties:
     kind: character
-    version: 1.0.0
-    sha256: 22e1d94b0da80babbc28929fc67939c750b5073d45b5a8ea7ba7d78f950d4c67
+    version: 1.1.0
+    sha256: 39ba942d7fa5b75baec390a31b7cab15632e30b1d67be594e541e8b3e24324fb
     blender_min: 5.2.1
     file: characters/PattyPatties.blend
     collection: COL_AVERY_CHEN
@@ -171,8 +171,8 @@ assets:
     - character
     - focus
     complexity:
-      triangles: 352
-      texture_memory_estimate_mb: 6.47
+      triangles: 358
+      texture_memory_estimate_mb: 8.14
     source: media/reference/patty-patties-style-hires.png plus rig/actions from docs/avery-chen/AveryChen.blend
     license: CC0-1.0
     style_id: patty_patties_2d

@@ -5,19 +5,23 @@
   "collection": "COL_AVERY_CHEN",
   "armature": "RIG_AVERY_CHEN",
   "retarget_profile": "proxy_rig_v1",
-  "sha256": "22e1d94b0da80babbc28929fc67939c750b5073d45b5a8ea7ba7d78f950d4c67",
+  "sha256": "39ba942d7fa5b75baec390a31b7cab15632e30b1d67be594e541e8b3e24324fb",
   "blender": "5.2.1 LTS",
-  "triangles": 352,
-  "objects": 39,
+  "triangles": 358,
+  "objects": 42,
   "actions": 20,
-  "texture_memory_mb": 6.47,
+  "texture_memory_mb": 8.14,
   "motion": {
-    "wave_upper_arm_r_delta": 1.2459255078023013
+    "wave_upper_arm_r_delta": 1.2459255078023013,
+    "wave_forearm_r_delta": 0.5759587297754424,
+    "point_right_forearm_r_delta": 0.4363324048166229,
+    "gesture_present_forearm_r_delta": 0.4537855956404948,
+    "reach_grab_forearm_r_delta": 0.2945184664393131
   },
   "failures": [],
   "link_test": {
     "override": "COL_AVERY_CHEN",
     "wave_pose_length": 1.2459255078023013,
-    "linked_objects": 39
+    "linked_objects": 42
   }
 }

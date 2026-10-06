@@ -32,7 +32,14 @@ REPO = ROOT.parent.parent
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
+from patty_elbow import ELBOW_PARTS, split_arms  # noqa: E402
 from patty_parts import build_all, card_placement  # noqa: E402
+from patty_viseme import (  # noqa: E402
+    MOUTH_ALPHA,
+    MOUTH_VARS,
+    build_mouth_textures,
+    mouth_place_from_head,
+)
 
 BLENDER_VERSION = (5, 2, 1)
 COLLECTION = "COL_AVERY_CHEN"
@@ -108,9 +115,6 @@ PARTS = [
     ("THIGH_R", "GEO_AVERY_THIGH.R", "thigh.R", -0.071),
     ("TORSO", "GEO_AVERY_TORSO", "chest", -0.100),
     ("BAG", "GEO_AVERY_BAG", "pelvis", -0.112),
-    ("ARM_L", "GEO_AVERY_ARM.L", "upper_arm.L", -0.120),
-    ("ARM_R", "GEO_AVERY_ARM.R", "upper_arm.R", -0.121),
-    ("TABLET", "GEO_AVERY_TABLET", "upper_arm.R", -0.132),
     ("HEAD", "GEO_AVERY_HEAD", "head", -0.145),
 ]
 
@@ -440,13 +444,16 @@ def build(source: Path, reference: Path, output: Path) -> dict[str, object]:
     play_action(None, 1)
 
     textures = build_all(reference)
+    textures.update(split_arms(textures))
+    for name, image in build_mouth_textures(textures["HEAD"]).items():
+        textures[f"MOUTH_{name}"] = image
     images = {name: load_image(f"TEX_{name}", image) for name, image in textures.items() if not name.endswith("_FULL")}
     # Full layers are placement masks, not packed textures.
     char_mat = image_material("MAT_PROXY_CHARACTER", images["TORSO"])
     focus_material()
 
     objects: dict[str, bpy.types.Object] = {}
-    for key, obj_name, bone, depth in PARTS:
+    for key, obj_name, bone, depth in [*PARTS, *ELBOW_PARTS]:
         place = card_placement(textures[f"{key}_FULL"])
         if not place:
             raise RuntimeError(f"empty part {key}")
@@ -465,51 +472,26 @@ def build(source: Path, reference: Path, output: Path) -> dict[str, object]:
     bind_to_bone(blink, "head")
     drive_material_alpha(blink.data.materials[0], "blink", [head_var("blink", head, "BLINK")])
 
-    mouth_place = {
-        "x": head_place["x"],
-        "z": head_place["z"] - head_place["h"] * 0.22,
-        "w": head_place["w"] * 0.22,
-        "h": head_place["h"] * 0.08,
-    }
-    viseme_terms = []
-    for key_name, tex_name in MOUTH_KEYS.items():
-        if tex_name not in images:
+    mouth_place = mouth_place_from_head(head_place, textures["HEAD"])
+    # The measured lip box is only a few dozen pixels on a full-body frame.
+    # Scale the card so the lip fill, not just the dark opening, is readable.
+    mouth_place["w"] *= 1.65
+    mouth_place["h"] *= 1.65
+    for key_name, expression in MOUTH_ALPHA.items():
+        if key_name == "VISEME_X":
             continue
         mouth = make_card(
             f"GEO_AVERY_MOUTH_{key_name}",
             mouth_place,
             -0.162,
-            image_material(f"MAT_MOUTH_{key_name}", images[tex_name]),
+            image_material(f"MAT_MOUTH_{key_name}", images[f"MOUTH_{key_name}"]),
         )
         bind_to_bone(mouth, "head")
-        # Portrait mouth crops still include cheek paper. Keep the datablocks
-        # (drivers + images) but do not cover the illustrated face until the
-        # crops are tight enough to read as lips only.
-        mouth.hide_render = True
-        if key_name.startswith("VISEME_"):
-            drive_material_alpha(
-                mouth.data.materials[0],
-                "v",
-                [head_var("v", head, key_name)],
-            )
-            viseme_terms.append(key_name)
-        else:
-            # Expressions lose to an open viseme so speech is not stuck smiling.
-            drive_material_alpha(
-                mouth.data.materials[0],
-                "exp * (1.0 - min(1.0, a+b+c+d+e+f+g+h))",
-                [
-                    head_var("exp", head, key_name),
-                    head_var("a", head, "VISEME_A"),
-                    head_var("b", head, "VISEME_D"),
-                    head_var("c", head, "VISEME_E"),
-                    head_var("d", head, "VISEME_F"),
-                    head_var("e", head, "VISEME_G"),
-                    head_var("f", head, "VISEME_H"),
-                    head_var("g", head, "VISEME_C"),
-                    head_var("h", head, "VISEME_B"),
-                ],
-            )
+        variables = [head_var(var_name, head, source_key) for var_name, source_key in MOUTH_VARS[key_name]]
+        drive_material_alpha(mouth.data.materials[0], expression, variables)
+        # Stacked alpha-0 cards render as a black blot in EEVEE. Hide the
+        # card itself unless this shape key is actually up.
+        add_driver(mouth, "hide_render", f"({expression}) < 0.04", variables)
 
     teeth_place = dict(mouth_place)
     teeth_place["h"] *= 0.45
@@ -529,19 +511,30 @@ def build(source: Path, reference: Path, output: Path) -> dict[str, object]:
         ],
     )
 
-    arm_l = card_placement(textures["ARM_L_FULL"])
+    hand_l = card_placement(textures["HAND_L_FULL"])
     watch_place = {
-        "x": arm_l["x"] + arm_l["w"] * 0.05,
-        "z": arm_l["z"] - arm_l["h"] * 0.38,
-        "w": 0.045,
-        "h": 0.055,
+        "x": hand_l["x"],
+        "z": hand_l["z"] + hand_l["h"] * 0.2,
+        "w": 0.04,
+        "h": 0.048,
     }
-    watch = make_card("GEO_AVERY_WATCH", watch_place, -0.128, image_material("MAT_WATCH", load_image("TEX_WATCH", draw_watch())))
-    bind_to_bone(watch, "upper_arm.L")
+    watch = make_card("GEO_AVERY_WATCH", watch_place, -0.136, image_material("MAT_WATCH", load_image("TEX_WATCH", draw_watch())))
+    bind_to_bone(watch, "hand.L")
     # The style-sheet tablet hand already paints the watch. A second card
     # read as a black box on the hip, so this object stays in the file for
     # the accessory slot and stays off in the default render.
     watch.hide_render = True
+    # The painted tablet already rides on the right hand card. Keep a named
+    # tablet object on hand.R so the accessory slot follows the wrist.
+    tablet_place = card_placement(textures["TABLET_FULL"])
+    tablet = make_card(
+        "GEO_AVERY_TABLET",
+        tablet_place,
+        -0.133,
+        image_material("MAT_TABLET_SLOT", images["TABLET"]),
+    )
+    bind_to_bone(tablet, "hand.R")
+    tablet.hide_render = True
 
     # Turnaround cards. Hidden during a normal front shot; the art is in the file.
     for view_name, obj_name in (
@@ -575,7 +568,7 @@ def build(source: Path, reference: Path, output: Path) -> dict[str, object]:
         "GEO_AVERY_MOUTH",
         mouth_place,
         -0.160,
-        image_material("MAT_MOUTH", images["MOUTH_X"]),
+        image_material("MAT_MOUTH", images["MOUTH_VISEME_B"]),
         (2, 1),
     )
     bind_to_bone(mouth_anchor, "head")
@@ -592,7 +585,7 @@ def build(source: Path, reference: Path, output: Path) -> dict[str, object]:
     scene = bpy.context.scene
     scene.unit_settings.system = "METRIC"
     scene["asset_id"] = "char.patty_patties"
-    scene["asset_version"] = "1.0.0"
+    scene["asset_version"] = "1.1.0"
     scene["style_id"] = "patty_patties_2d"
     scene["retarget_profile"] = RETARGET
     scene["forward_axis"] = "-Y"
@@ -663,8 +656,12 @@ def validate_open(path: Path) -> tuple[list[str], dict[str, object]]:
     required = [
         "GEO_AVERY_TORSO",
         "GEO_AVERY_HEAD",
-        "GEO_AVERY_ARM.L",
-        "GEO_AVERY_ARM.R",
+        "GEO_AVERY_UPPER_ARM.L",
+        "GEO_AVERY_FOREARM.L",
+        "GEO_AVERY_HAND.L",
+        "GEO_AVERY_UPPER_ARM.R",
+        "GEO_AVERY_FOREARM.R",
+        "GEO_AVERY_HAND.R",
         "GEO_AVERY_TABLET",
         "GEO_AVERY_WATCH",
         "GEO_AVERY_BAG",
@@ -693,11 +690,49 @@ def validate_open(path: Path) -> tuple[list[str], dict[str, object]]:
     if rig:
         play_action(None, 1)
         rest = rig.pose.bones["upper_arm.R"].rotation_euler.copy()
+        rest_fore = rig.pose.bones["forearm.R"].rotation_euler.copy()
         play_action("wave", 15)
         waved = rig.pose.bones["upper_arm.R"].rotation_euler.copy()
+        waved_fore = rig.pose.bones["forearm.R"].rotation_euler.copy()
         motion["wave_upper_arm_r_delta"] = (Vector(waved) - Vector(rest)).length
+        motion["wave_forearm_r_delta"] = (Vector(waved_fore) - Vector(rest_fore)).length
         if motion["wave_upper_arm_r_delta"] < 1e-3:
             failures.append("wave action did not move upper_arm.R")
+        best = motion["wave_forearm_r_delta"]
+        for action_name, frame in (("point_right", 12), ("gesture_present", 14), ("reach_grab", 14)):
+            play_action(None, 1)
+            before = Vector(rig.pose.bones["forearm.R"].rotation_euler)
+            play_action(action_name, frame)
+            delta = (Vector(rig.pose.bones["forearm.R"].rotation_euler) - before).length
+            motion[f"{action_name}_forearm_r_delta"] = delta
+            best = max(best, delta)
+        if best < 1e-3:
+            failures.append("no canonical action rotates forearm.R")
+        for obj_name, bone in (
+            ("GEO_AVERY_UPPER_ARM.R", "upper_arm.R"),
+            ("GEO_AVERY_FOREARM.R", "forearm.R"),
+            ("GEO_AVERY_HAND.R", "hand.R"),
+            ("GEO_AVERY_FOREARM.L", "forearm.L"),
+            ("GEO_AVERY_HAND.L", "hand.L"),
+        ):
+            obj = bpy.data.objects.get(obj_name)
+            if obj is None or obj.parent_bone != bone:
+                failures.append(f"{obj_name} is not parented to {bone}")
+        mouth = bpy.data.objects.get("GEO_AVERY_MOUTH_VISEME_A")
+        if mouth is None:
+            failures.append("missing VISEME_A mouth card")
+        else:
+            head.data.shape_keys.key_blocks["VISEME_A"].value = 0.0
+            bpy.context.view_layer.update()
+            deps = bpy.context.evaluated_depsgraph_get()
+            if not mouth.evaluated_get(deps).hide_render:
+                failures.append("VISEME_A mouth visible at rest")
+            head.data.shape_keys.key_blocks["VISEME_A"].value = 1.0
+            bpy.context.view_layer.update()
+            deps = bpy.context.evaluated_depsgraph_get()
+            if mouth.evaluated_get(deps).hide_render:
+                failures.append("VISEME_A mouth hidden while speaking")
+            head.data.shape_keys.key_blocks["VISEME_A"].value = 0.0
         play_action(None, 1)
     texture_mb = 0.0
     for image in bpy.data.images:
@@ -759,16 +794,18 @@ def set_part_visibility(show_parts: bool, view: str | None = None) -> None:
         "GEO_AVERY_EYE",
         "GEO_AVERY_BROW",
         "GEO_AVERY_EYELID",
-        "GEO_AVERY_MOUTH",
         "GEO_AVERY_TEETH",
         "GEO_AVERY_WATCH",
+        "GEO_AVERY_TABLET",
     )
     for obj in collection().objects:
         if obj.type != "MESH":
             continue
+        if obj.name.startswith("GEO_AVERY_MOUTH_"):
+            continue
         if obj.name.startswith("GEO_AVERY_VIEW_"):
             obj.hide_render = obj.name != view
-        elif obj.name.startswith(hidden_prefixes):
+        elif obj.name == "GEO_AVERY_MOUTH" or obj.name.startswith(hidden_prefixes):
             obj.hide_render = True
         else:
             obj.hide_render = not show_parts

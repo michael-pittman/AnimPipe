@@ -20,15 +20,13 @@ The collection and armature names match `char.avery_chen`, and the action names 
 | Materials | `MAT_PROXY_CHARACTER`, `MAT_PROXY_FOCUS` |
 | Coordinates | meters, Z up, forward −Y |
 | Blender | 5.2.1 LTS |
-| sha256 | `22e1d94b0da80babbc28929fc67939c750b5073d45b5a8ea7ba7d78f950d4c67` |
+| sha256 | `39ba942d7fa5b75baec390a31b7cab15632e30b1d67be594e541e8b3e24324fb` |
 
 Textures are packed. Nothing in the file links out to a machine path.
 
 ## What is in the file
 
-Front view is bone-parented cards cut from the style sheet: head and hair, torso, each arm, bag, tablet, thighs, shins, shoes. `BLINK` draws lids over the eyes. Side, three-quarter, and back are packed turnaround cards (`GEO_AVERY_VIEW_SIDE`, `GEO_AVERY_VIEW_THREE_QUARTER`, `GEO_AVERY_VIEW_BACK`), hidden during a front shot.
-
-`GEO_AVERY_WATCH` and the viseme mouth cards are in the collection and parented, and they are hidden in the default render. The watch is already painted on the tablet hand. The expression-row mouth crops do not sit cleanly on the front portrait, so showing them covered the face.
+Front view is bone-parented cards cut from the style sheet: head and hair, torso, bag, thighs, shins, shoes, and each arm split into upper arm, forearm, and hand. The forearm card follows `forearm.L` / `forearm.R`, and the hand card (tablet included on the right) follows `hand.L` / `hand.R`, so an action that bends the elbow hinges the sleeve. `BLINK` draws lids over the eyes. Viseme and expression cards sit on the measured lips and are shown by a shape-key driver on `GEO_AVERY_HEAD` (no app handler, so a linked shot still opens the mouth). Side, three-quarter, and back are packed turnaround cards, hidden during a front shot.
 
 ## Rebuild
 
@@ -48,6 +46,6 @@ On Blender 5.2.1 LTS:
 
 ## Limits
 
-- Elbows and knees do not hinge on their own. The arm card follows `upper_arm` and the shin card follows `shin`, so a wave or a step reads, but the sleeve does not bend at the elbow.
-- Front, side, and back are separate drawings. The live rig is the front cutout. Turn the view cards on for the other angles; do not expect the front cards to look correct from the side.
-- `BLINK` is the expression that changes the portrait. The other facial keys are on the head mesh for the pipeline, with small vertex motion, and the mouth image cards stay hidden.
+- Knees hinge (`shin` has its own card). The elbow hinges too. The sleeve art is still a flat card, so the bend is a joint between two drawings, not a curved elbow.
+- Front, side, and back are separate drawings. The live rig is the front cutout. Turn the view cards on for the other angles.
+- Mouth shapes are painted cel cards in the style-sheet palette, driven by the viseme and expression keys. They cover the lips. They are not a new crop of the expression-row busts.
