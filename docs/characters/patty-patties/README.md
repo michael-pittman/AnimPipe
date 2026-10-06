@@ -1,6 +1,6 @@
 # Patty Patties — pipeline drop-in
 
-Illustrated 2D cutout of the Patty Patties style sheet, rigged so AnimPipe can link it and play the existing proxy actions. About **352 triangles**, so a shot renders the character as flat cards instead of the 66k-triangle V3 body.
+Illustrated 2D cutout of the Patty Patties style sheet, rigged so AnimPipe can link it and play the existing proxy actions. About **358 triangles**, so a shot renders the character as flat cards instead of the 66k-triangle V3 body.
 
 ## Drop-in
 
