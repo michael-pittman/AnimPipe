@@ -1,4 +1,14 @@
 # graft's local graph cache — regenerable, not committed (run `graft build`).
 /graft/
+
+# Local / generated noise
 __pycache__/
 *.blend1
+*.pyc
+.DS_Store
+
+# WIP dump folders (evidence lives under media/)
+/artifacts/
+
+# Local experiment cutout (pipeline drop-in is assets/characters/PattyPatties.blend)
+/docs/avery-2d/Avery2D.blend
