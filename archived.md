@@ -10,4 +10,4 @@
 - [x] [V3 reproducibility QA](https://cursor.com/agents/bc-93051903-3d28-5175-a879-86bc73117ff9) passed artifacts and clean-clone inputs; upstream Blender Doctor remains
 - [x] [Avery V3 blend](/cursor/stores/self/docs/avery-chen/AveryChen.blend) passed style, facial, contract, and builder gates with documented notes
 - [x] [Avery V3 repository push](https://cursor.com/agents/bc-f838f7ce-6afe-504c-a3d4-25ab6db7dd7d) pushed the validated Git LFS branch at `2194ffb`
-- [x] [2D character blend](/cursor/stores/self/docs/avery-2d/Avery2D.blend) matched the sheet at rest; the cutout previews were rejected as incomplete
+- [x] Early Avery 2D cutout experiment (local `Avery2D.blend`); superseded by `assets/characters/PattyPatties.blend`
