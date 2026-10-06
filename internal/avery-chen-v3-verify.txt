@@ -1,0 +1,21 @@
+Avery Chen V3 final reopen verification
+Blender: 5.2.1 LTS
+Collection: COL_AVERY_CHEN
+Armature: RIG_AVERY_CHEN
+Retarget: proxy_rig_v1
+Triangles: 66402
+Texture memory estimate MB: 0.0
+Actions: 20
+Objects: 58
+External images: []
+Libraries: []
+PASS: exact 18-bone proxy_rig_v1 hierarchy
+PASS: canonical 20 slotted actions
+PASS: 9 visemes and 8 facial controls
+PASS: driven eye gaze and brow controls
+PASS: MAT_PROXY_CHARACTER and MAT_PROXY_FOCUS
+PASS: packed/no external images
+PASS: no linked libraries
+PASS: rendered triangle budget <= 120000
+PASS: meters, Z-up, -Y-forward
+RESULT: PASS

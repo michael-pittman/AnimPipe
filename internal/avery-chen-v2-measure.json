@@ -1,0 +1,102 @@
+{
+  "stature_m": 1.6957864286378026,
+  "sole_z": 0.00838534813374281,
+  "crown_z": 1.7041717767715454,
+  "chin_z": 1.4901717767715452,
+  "head_height_m": 0.2140000000000002,
+  "heads": 7.924235647840192,
+  "head_width_m": 0.16630589962005615,
+  "hip_z": 0.9000000357627869,
+  "hip_fraction": 0.5307272310733977,
+  "knee_z": 0.48156967759132385,
+  "ankle_z": 0.07999999821186066,
+  "knee_mid_z": 0.49000001698732376,
+  "acromion_m": 0.32937780022621155,
+  "acromion_head_widths": 1.9805539128720677,
+  "shoulder_breadth_m": 0.32937780022621155,
+  "hip_breadth_m": 0.34828799962997437,
+  "shoulder_hip_ratio": 0.9457052800445228,
+  "elbow_z": 1.1280288696289062,
+  "wrist_z": 0.8954772353172302,
+  "fingertip_z": 0.7909149527549744,
+  "hand_length_m": 0.10567610676575986,
+  "hand_head_heights": 0.493813583017569,
+  "foot_length_m": 0.23651584048546687,
+  "foot_head_heights": 1.1052142078760123,
+  "lr_shoulder_mm": 0.0,
+  "lr_wrist_mm": 0.0,
+  "landmarks": {
+    "crown": [
+      0.0,
+      0.0,
+      1.7041717767715454
+    ],
+    "chin": [
+      0.0,
+      -0.12947167456150055,
+      1.4901717767715452
+    ],
+    "acromion_l": [
+      0.16468890011310577,
+      -0.00936648715287447,
+      1.366769790649414
+    ],
+    "acromion_r": [
+      -0.16468890011310577,
+      -0.00936648715287447,
+      1.366769790649414
+    ],
+    "elbow_l": [
+      0.25156888365745544,
+      -0.017741817981004715,
+      1.1280288696289062
+    ],
+    "wrist_l": [
+      0.2792859971523285,
+      -0.019092049449682236,
+      0.8954772353172302
+    ],
+    "hip_l": [
+      0.10287994146347046,
+      2.3283064365386963e-10,
+      0.9000000357627869
+    ],
+    "hip_r": [
+      -0.10287994146347046,
+      2.3283064365386963e-10,
+      0.9000000357627869
+    ],
+    "knee_l": [
+      0.14047324657440186,
+      -0.03148898482322693,
+      0.48156967759132385
+    ],
+    "ankle_l": [
+      0.17639665305614471,
+      -0.01101392600685358,
+      0.07999999821186066
+    ],
+    "fingertip_l": [
+      0.2862376272678375,
+      -0.03272449970245361,
+      0.7909149527549744
+    ]
+  },
+  "jacket_head_widths": 2.340024594410356,
+  "rendered_triangles": 58236,
+  "texture_mb": 81.0,
+  "jacket_width_m": 0.32726040482521057,
+  "checks": [
+    {
+      "label": "adult head-height 7.0-8.0",
+      "pass": true,
+      "detail": "7.92"
+    }
+  ],
+  "shoe_sole_z": -0.0014559216797351837,
+  "tie": true,
+  "wardrobe": "sleeveless male_elegantsuit01 vest, warm-stone shirt, charcoal trousers; tie recolored to the lanyard teal; armscyes finished with a chest-parented binding",
+  "hair": "short02",
+  "note": "Native MakeHuman proportions. The jacket sleeves are removed at the armscye. The openings are smoothed about 6.5 mm off the body, with the shoulder tips on the torso side of the deltoid and a 9 mm binding parented to chest. The shoulders, axilla, and arms are visible skin. The tie uses the lanyard teal. Head width is the temple band.",
+  "texture_packed_mb": 12.0
+}

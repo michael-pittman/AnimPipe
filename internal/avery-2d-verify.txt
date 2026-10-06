@@ -1,0 +1,15 @@
+Avery 2D cutout reopen verification
+Blender: 5.2.1 LTS
+Collection: COL_AVERY_CHEN
+Armature: RIG_AVERY_CHEN
+Style: avery_chen_patty_2d / patty-2d-style-spec.md
+Triangles: 10
+Actions: 20
+Objects: 42
+PASS: 18-bone proxy_rig_v1 hierarchy
+PASS: 20 slotted fake-user actions
+PASS: visemes and expressions on GEO_AVERY_HEAD
+PASS: eye/brow drivers; teeth hidden at neutral
+PASS: MAT_PROXY_CHARACTER and MAT_PROXY_FOCUS
+PASS: packed images; no linked libraries
+RESULT: PASS

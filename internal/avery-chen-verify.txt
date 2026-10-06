@@ -1,0 +1,142 @@
+file: /cursor/stores/bc-b80cc329-0c07-499f-9a51-00c871f014b4/docs/avery-chen/AveryChen.blend
+PASS: collection COL_AVERY_CHEN
+PASS: armature object RIG_AVERY_CHEN
+PASS: armature in collection
+PASS: material MAT_PROXY_CHARACTER
+PASS: material MAT_PROXY_FOCUS
+PASS: bone root
+PASS: bone pelvis
+PASS: bone spine
+PASS: bone chest
+PASS: bone neck
+PASS: bone head
+PASS: bone upper_arm.L
+PASS: bone forearm.L
+PASS: bone hand.L
+PASS: bone upper_arm.R
+PASS: bone forearm.R
+PASS: bone hand.R
+PASS: bone thigh.L
+PASS: bone shin.L
+PASS: bone foot.L
+PASS: bone thigh.R
+PASS: bone shin.R
+PASS: bone foot.R
+PASS: bone hierarchy
+PASS: mesh objects in collection — GEO_AVERY_HEAD, GEO_AVERY_BODY, GEO_AVERY_SHOES, GEO_AVERY_EYES, GEO_AVERY_BROWS, GEO_AVERY_TEETH, GEO_AVERY_TONGUE, GEO_AVERY_LANYARD, GEO_AVERY_HAIR
+PASS: head mesh GEO_AVERY_HEAD
+PASS: shape key VISEME_A
+PASS: shape key VISEME_A moves verts — max delta 0.0202 m
+PASS: shape key VISEME_B
+PASS: shape key VISEME_B moves verts — max delta 0.0045 m
+PASS: shape key VISEME_C
+PASS: shape key VISEME_C moves verts — max delta 0.0064 m
+PASS: shape key VISEME_D
+PASS: shape key VISEME_D moves verts — max delta 0.0047 m
+PASS: shape key VISEME_E
+PASS: shape key VISEME_E moves verts — max delta 0.0086 m
+PASS: shape key VISEME_F
+PASS: shape key VISEME_F moves verts — max delta 0.0050 m
+PASS: shape key VISEME_G
+PASS: shape key VISEME_G moves verts — max delta 0.0069 m
+PASS: shape key VISEME_H
+PASS: shape key VISEME_H moves verts — max delta 0.0133 m
+PASS: shape key VISEME_X
+PASS: shape key VISEME_X moves verts — max delta 0.0153 m
+PASS: shape key BLINK
+PASS: shape key BLINK moves verts — max delta 0.0157 m
+PASS: shape key BROW_UP
+PASS: shape key BROW_UP moves verts — max delta 0.0067 m
+PASS: shape key BROW_DOWN
+PASS: shape key BROW_DOWN moves verts — max delta 0.0066 m
+PASS: shape key EXP_smile
+PASS: shape key EXP_smile moves verts — max delta 0.0174 m
+PASS: shape key EXP_frown
+PASS: shape key EXP_frown moves verts — max delta 0.0063 m
+PASS: shape key EXP_surprise
+PASS: shape key EXP_surprise moves verts — max delta 0.0128 m
+PASS: shape key LOOK_LEFT
+PASS: shape key LOOK_LEFT moves verts — max delta 0.0055 m
+PASS: shape key LOOK_RIGHT
+PASS: shape key LOOK_RIGHT moves verts — max delta 0.0055 m
+PASS: action idle_neutral_loop
+PASS: action idle_neutral_loop fake user
+PASS: action idle_neutral_loop slots — slots=1
+PASS: action idle_neutral_loop motion range — range 1.0-48.0
+PASS: action walk_cycle
+PASS: action walk_cycle fake user
+PASS: action walk_cycle slots — slots=1
+PASS: action walk_cycle motion range — range 1.0-24.0
+PASS: action turn_left_90
+PASS: action turn_left_90 fake user
+PASS: action turn_left_90 slots — slots=1
+PASS: action turn_left_90 motion range — range 1.0-18.0
+PASS: action turn_right_90
+PASS: action turn_right_90 fake user
+PASS: action turn_right_90 slots — slots=1
+PASS: action turn_right_90 motion range — range 1.0-18.0
+PASS: action gesture_present
+PASS: action gesture_present fake user
+PASS: action gesture_present slots — slots=1
+PASS: action gesture_present motion range — range 1.0-28.0
+PASS: action point_left
+PASS: action point_left fake user
+PASS: action point_left slots — slots=1
+PASS: action point_left motion range — range 1.0-24.0
+PASS: action point_right
+PASS: action point_right fake user
+PASS: action point_right slots — slots=1
+PASS: action point_right motion range — range 1.0-24.0
+PASS: action wave
+PASS: action wave fake user
+PASS: action wave slots — slots=1
+PASS: action wave motion range — range 1.0-30.0
+PASS: action head_nod
+PASS: action head_nod fake user
+PASS: action head_nod slots — slots=1
+PASS: action head_nod motion range — range 1.0-20.0
+PASS: action head_shake
+PASS: action head_shake fake user
+PASS: action head_shake slots — slots=1
+PASS: action head_shake motion range — range 1.0-24.0
+PASS: action reach_grab
+PASS: action reach_grab fake user
+PASS: action reach_grab slots — slots=1
+PASS: action reach_grab motion range — range 1.0-28.0
+PASS: action place_release
+PASS: action place_release fake user
+PASS: action place_release slots — slots=1
+PASS: action place_release motion range — range 1.0-30.0
+PASS: action pose_neutral
+PASS: action pose_neutral fake user
+PASS: action pose_neutral slots — slots=1
+PASS: action pose_neutral 1-frame hold — range 1.0-1.0
+PASS: action pose_present
+PASS: action pose_present fake user
+PASS: action pose_present slots — slots=1
+PASS: action pose_present 1-frame hold — range 1.0-1.0
+PASS: action pose_listen
+PASS: action pose_listen fake user
+PASS: action pose_listen slots — slots=1
+PASS: action pose_listen 1-frame hold — range 1.0-1.0
+PASS: action pose_think
+PASS: action pose_think fake user
+PASS: action pose_think slots — slots=1
+PASS: action pose_think 1-frame hold — range 1.0-1.0
+PASS: action pose_point
+PASS: action pose_point fake user
+PASS: action pose_point slots — slots=1
+PASS: action pose_point 1-frame hold — range 1.0-1.0
+PASS: action pose_hold
+PASS: action pose_hold fake user
+PASS: action pose_hold slots — slots=1
+PASS: action pose_hold 1-frame hold — range 1.0-1.0
+PASS: action pose_ready
+PASS: action pose_ready fake user
+PASS: action pose_ready slots — slots=1
+PASS: action pose_ready 1-frame hold — range 1.0-1.0
+PASS: action pose_end
+PASS: action pose_end fake user
+PASS: action pose_end slots — slots=1
+PASS: action pose_end 1-frame hold — range 1.0-1.0
+RESULT: PASS

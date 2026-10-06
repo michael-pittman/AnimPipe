@@ -1,0 +1,13 @@
+- [x] [Avery V2 design review](https://cursor.com/agents/bc-2a291974-7fab-5112-a1f9-2f0ba306a0bb) set measurable anatomy and visual gates
+- [x] [Pipeline contract](https://cursor.com/agents/bc-04107bd8-d789-5742-bf40-855a0e87ee72) mapped the 20 proxy actions
+- [x] [Character direction](/cursor/stores/self/docs/character-direction.md) defines Avery’s role and tone
+- [x] [Avery V2 handoff](https://cursor.com/agents/bc-d13ce262-5594-5cc6-a8f3-972d67b153c1) passed visual and contract QA before the V3 redesign
+- [x] [Avery V3 style translation](https://cursor.com/agents/bc-a956cd11-14c3-591d-9d71-7492401ec06b) set the reference-driven 3D art direction
+- [x] [Avery V3 facial audit](https://cursor.com/agents/bc-45a32254-bff5-5dff-beb2-6c7acca5504f) set measured eye, brow, dental, and shape-key gates
+- [x] [Repository integration plan](https://cursor.com/agents/bc-2c44c5eb-6576-598e-a0e8-b6d48fad6ffe) set the Git LFS asset and manifest paths
+- [x] [V3 style QA](https://cursor.com/agents/bc-e989c532-48e0-5b33-bbfd-62a3c856454c) passed with documented armscye, cuff, patch, and closeup-hair notes
+- [x] [V3 facial QA](https://cursor.com/agents/bc-99a0d8d1-aa12-5ac7-a905-8e1dd763a972) passed with minor smile-warmth and cheek-stretch notes
+- [x] [V3 reproducibility QA](https://cursor.com/agents/bc-93051903-3d28-5175-a879-86bc73117ff9) passed artifacts and clean-clone inputs; upstream Blender Doctor remains
+- [x] [Avery V3 blend](/cursor/stores/self/docs/avery-chen/AveryChen.blend) passed style, facial, contract, and builder gates with documented notes
+- [x] [Avery V3 repository push](https://cursor.com/agents/bc-f838f7ce-6afe-504c-a3d4-25ab6db7dd7d) pushed the validated Git LFS branch at `2194ffb`
+- [x] [2D character blend](/cursor/stores/self/docs/avery-2d/Avery2D.blend) matched the sheet at rest; the cutout previews were rejected as incomplete
