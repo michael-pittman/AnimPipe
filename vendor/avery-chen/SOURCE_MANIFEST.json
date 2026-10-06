@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "license": "CC0-1.0",
+  "source_file": {
+    "path": "vendor/avery-chen/coherent-base.blend",
+    "sha256": "22fb0364e20c84cd3b886b9f9f665cec3abc898adb6afee9b1ee282dca161f2d",
+    "bytes": 2069782,
+    "blender": "5.2.1",
+    "packed_images": 0,
+    "linked_libraries": 0
+  },
+  "contents": [
+    {
+      "name": "MakeHuman hm08 basemesh",
+      "role": "integrated anatomy, eyelids, lips, ears, hands, facial topology",
+      "upstream": "https://github.com/makehumancommunity/makehuman",
+      "license": "CC0-1.0"
+    },
+    {
+      "name": "MakeHuman Community male_elegantsuit01",
+      "role": "coherent jacket and trouser source topology",
+      "upstream": "https://files.makehumancommunity.org/",
+      "license": "CC0-1.0"
+    },
+    {
+      "name": "MakeHuman Community shoes01",
+      "role": "anatomically fitted footwear upper source topology",
+      "upstream": "https://files.makehumancommunity.org/",
+      "license": "CC0-1.0"
+    },
+    {
+      "name": "MakeHuman Community high-poly eyes",
+      "role": "equal-size seated eye globes",
+      "upstream": "https://files.makehumancommunity.org/",
+      "license": "CC0-1.0"
+    },
+    {
+      "name": "MakeHuman Community visemes01 and faceunits01",
+      "role": "integrated facial deformation source deltas",
+      "upstream": "https://files.makehumancommunity.org/functional/",
+      "license": "CC0-1.0"
+    },
+    {
+      "name": "AnimPipe proxy_rig_v1 actions",
+      "role": "18-bone hierarchy and canonical 20 performance actions",
+      "upstream": "original project work",
+      "license": "CC0-1.0"
+    }
+  ],
+  "derivation_record": {
+    "historical_input_sha256": "4c09c2fdb6aa4c0b40079a17a2e1ec6b90c8d8de412573bc386c71549f0a6b84",
+    "historical_input_role": "one-time provenance only; not a shipped builder dependency",
+    "sanitization": [
+      "kept only GEO_AVERY_HEAD, GEO_AVERY_BODY, GEO_AVERY_SHOES, GEO_AVERY_EYES, RIG_AVERY_CHEN, and canonical actions",
+      "removed historical hair, brows, teeth, tongue, lanyard, binding, materials, images, and external paths",
+      "stored provenance and CC0 license text inside the declared vendor blend"
+    ]
+  }
+}

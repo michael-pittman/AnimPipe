@@ -1,0 +1,191 @@
+{
+  "actions": [
+    {
+      "category": "idle",
+      "duration_frames": 48,
+      "loop": true,
+      "name": "idle_neutral_loop"
+    },
+    {
+      "category": "locomotion",
+      "duration_frames": 24,
+      "loop": true,
+      "name": "walk_cycle"
+    },
+    {
+      "category": "turn",
+      "duration_frames": 18,
+      "loop": false,
+      "name": "turn_left_90"
+    },
+    {
+      "category": "turn",
+      "duration_frames": 18,
+      "loop": false,
+      "name": "turn_right_90"
+    },
+    {
+      "category": "gesture",
+      "duration_frames": 28,
+      "loop": false,
+      "name": "gesture_present"
+    },
+    {
+      "category": "gesture",
+      "duration_frames": 24,
+      "loop": false,
+      "name": "point_left"
+    },
+    {
+      "category": "gesture",
+      "duration_frames": 24,
+      "loop": false,
+      "name": "point_right"
+    },
+    {
+      "category": "gesture",
+      "duration_frames": 30,
+      "loop": false,
+      "name": "wave"
+    },
+    {
+      "category": "gesture",
+      "duration_frames": 20,
+      "loop": false,
+      "name": "head_nod"
+    },
+    {
+      "category": "gesture",
+      "duration_frames": 24,
+      "loop": false,
+      "name": "head_shake"
+    },
+    {
+      "category": "gesture",
+      "duration_frames": 28,
+      "loop": false,
+      "name": "reach_grab"
+    },
+    {
+      "category": "gesture",
+      "duration_frames": 30,
+      "loop": false,
+      "name": "place_release"
+    },
+    {
+      "category": "pose",
+      "duration_frames": 1,
+      "loop": false,
+      "name": "pose_neutral"
+    },
+    {
+      "category": "pose",
+      "duration_frames": 1,
+      "loop": false,
+      "name": "pose_present"
+    },
+    {
+      "category": "pose",
+      "duration_frames": 1,
+      "loop": false,
+      "name": "pose_listen"
+    },
+    {
+      "category": "pose",
+      "duration_frames": 1,
+      "loop": false,
+      "name": "pose_think"
+    },
+    {
+      "category": "pose",
+      "duration_frames": 1,
+      "loop": false,
+      "name": "pose_point"
+    },
+    {
+      "category": "pose",
+      "duration_frames": 1,
+      "loop": false,
+      "name": "pose_hold"
+    },
+    {
+      "category": "pose",
+      "duration_frames": 1,
+      "loop": false,
+      "name": "pose_ready"
+    },
+    {
+      "category": "pose",
+      "duration_frames": 1,
+      "loop": false,
+      "name": "pose_end"
+    }
+  ],
+  "armature": "RIG_AVERY_CHEN",
+  "asset_id": "char.avery_chen",
+  "blender": "5.2.1",
+  "builder": "scripts/build_avery_chen.py",
+  "bytes": 2280443,
+  "collection": "COL_AVERY_CHEN",
+  "coordinates": {
+    "forward": "-Y",
+    "scale": 1.0,
+    "units": "meters",
+    "up": "Z"
+  },
+  "external_images": [],
+  "facial_controls": [
+    "BLINK",
+    "BROW_UP",
+    "BROW_DOWN",
+    "EXP_smile",
+    "EXP_frown",
+    "EXP_surprise",
+    "LOOK_LEFT",
+    "LOOK_RIGHT"
+  ],
+  "facial_measures": {
+    "lip_center_z": 1.5339735746383667,
+    "lip_width": 0.06211841478943825
+  },
+  "file": "characters/AveryChen.blend",
+  "interaction_points": {
+    "hand_left": "hand.L",
+    "hand_right": "hand.R"
+  },
+  "known_limitations": [
+    "The exact 18-bone contract has no clavicles, jaw, fingers, or hair-secondary bones.",
+    "Rolled sleeves are upper-arm weighted and overlap the chest-weighted armscye.",
+    "The volumetric groom is head-locked; no runtime secondary simulation is required.",
+    "Dental and tongue follow clamped driven shape keys rather than a jaw bone.",
+    "Blender blend bytes are not claimed byte-identical; scene inventory and rendered output are deterministic under 5.2.1."
+  ],
+  "license": "CC0-1.0",
+  "linked_libraries": [],
+  "objects": 58,
+  "output_path": "assets/characters/AveryChen.blend",
+  "packed_dependencies": true,
+  "retarget_profile": "proxy_rig_v1",
+  "sha256": "751fd05872f4730ef39cec3160395b431693304a91a5283e6448199739f6f6bc",
+  "source": {
+    "file": "vendor/avery-chen/coherent-base.blend",
+    "license": "CC0-1.0",
+    "runtime_dependencies": [],
+    "sha256": "22fb0364e20c84cd3b886b9f9f665cec3abc898adb6afee9b1ee282dca161f2d"
+  },
+  "style_id": "avery_chen_v3",
+  "texture_memory_estimate_mb": 0.0,
+  "triangles": 66402,
+  "version": "3.0.0",
+  "visemes": [
+    "VISEME_A",
+    "VISEME_B",
+    "VISEME_C",
+    "VISEME_D",
+    "VISEME_E",
+    "VISEME_F",
+    "VISEME_G",
+    "VISEME_H",
+    "VISEME_X"
+  ]
+}
